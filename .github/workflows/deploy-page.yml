@@ -2,7 +2,7 @@ name: "🚀 Deploy"
 on:
     push:
         branches:
-            - development
+            - main
 
 jobs:
     deploy-page:
