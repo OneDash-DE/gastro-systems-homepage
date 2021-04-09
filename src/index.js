@@ -30,7 +30,10 @@ if (platform.windows) {
 if (latest) {
 	axios.get(`${CONFIG.host}${latest}`).then((x) => {
 		const doc = yaml.load(x.data);
-		fileName = doc.files[0].url;
+		fileName = doc.files.find(y => y {
+			const extension = filename.split('.').pop();
+			return ["exe", "dmg", "AppImage"].includes(extension);
+		}).url;
 		filenameElement.innerHTML = `(${fileName})`;
 
 		document.querySelector("#download-btn").addEventListener("click", () => {
