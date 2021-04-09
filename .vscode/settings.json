@@ -1,0 +1,18 @@
+{
+  "files.exclude": {
+    ".editorconfig": true,
+    ".prettierrc": true,
+    "package-lock.json": true,
+    "postcss.config.js": true,
+    "node_modules": true,
+    "dist": true,
+    "the-rhino-homepage.code-workspace": true,
+    "webpack.dev.js": true,
+    "webpack.prod.js": true,
+    ".github": true,
+    ".vscode": true,
+    ".eslintrc": true,
+    "static\\.gitkeep": true,
+    ".gitignore": true
+  }
+}
