@@ -30,8 +30,8 @@ if (platform.windows) {
 if (latest) {
 	axios.get(`${CONFIG.host}${latest}`).then((x) => {
 		const doc = yaml.load(x.data);
-		fileName = doc.files.find(y => y {
-			const extension = filename.split('.').pop();
+		fileName = doc.files.find(y => {
+			const extension = y.url.split('.').pop();
 			return ["exe", "dmg", "AppImage"].includes(extension);
 		}).url;
 		filenameElement.innerHTML = `(${fileName})`;
