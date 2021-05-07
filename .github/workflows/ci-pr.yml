@@ -1,0 +1,25 @@
+name: "PR"
+on:
+    pull_request:
+        branches: [main]
+
+jobs:
+    check-pr:
+        runs-on: ubuntu-latest
+        name: "Check PR"
+        steps:
+            - uses: actions/checkout@v2
+            - uses: technote-space/auto-cancel-redundant-workflow@v1
+            - uses: actions/setup-node@v1
+              with:
+                  node-version: 15
+
+            - name: 🏗 Install dependencies
+              run: |
+                  yarn --frozen-lockfile --network-timeout 300000
+
+            - name: "🧪 Run Tests"
+              run: yarn test
+
+            - name: "⚙ Check app building"
+              run: yarn build

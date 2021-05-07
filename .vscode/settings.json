@@ -9,7 +9,6 @@
     "the-rhino-homepage.code-workspace": true,
     "webpack.dev.js": true,
     "webpack.prod.js": true,
-    ".github": true,
     ".vscode": true,
     ".eslintrc": true,
     "static\\.gitkeep": true,

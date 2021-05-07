@@ -1,0 +1,28 @@
+name: Lint
+on:
+    push:
+    pull_request:
+        branches: [main]
+
+jobs:
+    build:
+        name: Superlinter
+        if: "!contains(github.event.pull_request.labels.*.name, 'dependencies')"
+        runs-on: ubuntu-latest
+
+        steps:
+            - name: Checkout Code
+              uses: actions/checkout@v2
+              with:
+                  fetch-depth: 0
+
+            - name: Lint project
+              uses: github/super-linter@v3
+              env:
+                  VALIDATE_ALL_CODEBASE: false
+                  VALIDATE_EDITORCONFIG: false
+                  VALIDATE_MARKDOWN: false
+                  VALIDATE_DOCKERFILE: false
+                  VALIDATE_JSON: false
+                  DEFAULT_BRANCH: main
+                  GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
