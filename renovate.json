@@ -4,12 +4,16 @@
 	"semanticCommits": true,
 	"labels": ["dependencies"],
 	"packageRules": [
-		{
-			"packagePatterns": ["*"],
-			"minor": {
-				"groupName": "all non-major dependencies",
-				"groupSlug": "all-minor-patch"
-			}
-		}
-	]
+			{
+			"matchPackagePatterns": [
+			"*"
+			],
+			"matchUpdateTypes": [
+			"minor",
+			"patch"
+			],
+			"groupName": "all non-major dependencies",
+			"groupSlug": "all-minor-patch"
+    	}
+  ]
 }
